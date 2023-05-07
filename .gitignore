@@ -24,7 +24,6 @@ fabric.properties
 **/build/
 !src/**/build/
 gradle-app.setting
-!gradle-wrapper.jar
 !gradle-wrapper.properties
 .gradletasknamecache
 .DS_Store
