@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id "org.springframework.boot" version "2.7.6"
-    id "io.spring.dependency-management" version "1.1.0"
+    id "org.springframework.boot" version "2.7.11"
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
 group 'com.wizy'
@@ -17,7 +17,7 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2021.0.5")
+    set('springCloudVersion', "2021.0.7")
 }
 
 jar {
@@ -31,6 +31,7 @@ jar {
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server"
     implementation "org.springframework.cloud:spring-cloud-starter-config"
+    implementation "org.springframework.cloud:spring-cloud-starter-bootstrap"
 }
 
 dependencyManagement {

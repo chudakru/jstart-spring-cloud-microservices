@@ -38,6 +38,7 @@ dependencyManagement {
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.7.RELEASE" // gateway service
     implementation "org.springframework.cloud:spring-cloud-starter-config"
+    implementation "org.springframework.cloud:spring-cloud-starter-bootstrap"
     implementation "org.springframework.cloud:spring-cloud-starter"
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     implementation "org.springframework.cloud:spring-cloud-starter-sleuth" // for logs

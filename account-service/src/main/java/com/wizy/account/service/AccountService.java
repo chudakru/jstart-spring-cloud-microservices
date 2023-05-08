@@ -19,29 +19,24 @@ public class AccountService {
   }
 
   public Account getById(Long accountId) {
-    return accountRepository.findById(accountId)
-        .orElseThrow(() -> new AccountNotFoundException("Enable to find account with id: " + accountId));
+    return accountRepository
+        .findById(accountId)
+        .orElseThrow(
+            () -> new AccountNotFoundException("Enable to find account with id: " + accountId));
   }
 
   public Long create(String name, String email, String phone, List<Long> bills) {
-    final Account account = Account.builder()
-        .name(name)
-        .email(email)
-        .phone(phone)
-        .creationDate(OffsetDateTime.now())
-        .bills(bills)
-        .build();
+    final Account account = new Account(name, email, phone, OffsetDateTime.now(), bills);
     return accountRepository.save(account).getId();
   }
 
   public Account update(Long accountId, String name, String email, String phone, List<Long> bills) {
-    final Account account = Account.builder()
-        .id(accountId)
-        .name(name)
-        .email(email)
-        .phone(phone)
-        .bills(bills)
-        .build();
+    final Account account = new Account();
+    account.setId(accountId);
+    account.setName(name);
+    account.setEmail(email);
+    account.setPhone(phone);
+    account.setBills(bills);
     return accountRepository.save(account);
   }
 
@@ -50,5 +45,4 @@ public class AccountService {
     accountRepository.delete(deletedAccount);
     return deletedAccount;
   }
-
 }

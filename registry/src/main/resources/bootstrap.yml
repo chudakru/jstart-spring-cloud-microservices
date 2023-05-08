@@ -4,9 +4,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8001
-      fail-fast: true
       password: admin
       username: user
+      fail-fast: true
 
 eureka:
   instance:
